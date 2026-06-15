@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeSteam - Бесплатный игровой каталог</title>
+    <!-- Подключаем иконки, чтобы кнопки выглядели круто -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo"><i class="fa-solid fa-gamepad"></i> FreeSteam</div>
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Поиск игр и приложений...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </header>
+
+    <!-- Главный контейнер -->
+    <main>
+        <h2 class="section-title">Популярные игры</h2>
+        
+        <!-- Сетка с карточками игр -->
+        <div class="games-grid">
+            
+            <!-- Игра 1 -->
+            <div class="game-card">
+                <div class="game-badge">Новинка</div>
+                <div class="game-info">
+                    <h3>Cyberpunk 2077</h3>
+                    <p class="category">Экшен / RPG</p>
+                    <div class="price-row">
+                        <span class="price-free">БЕСПЛАТНО</span>
+                        <!-- Ссылка на скачивание файла -->
+                        <a href="#" download class="download-btn"><i class="fa-solid fa-download"></i> Скачать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Игра 2 -->
+            <div class="game-card">
+                <div class="game-info">
+                    <h3>The Witcher 3</h3>
+                    <p class="category">Приключения / RPG</p>
+                    <div class="price-row">
+                        <span class="price-free">БЕСПЛАТНО</span>
+                        <a href="#" download class="download-btn"><i class="fa-solid fa-download"></i> Скачать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Игра 3 -->
+            <div class="game-card">
+                <div class="game-info">
+                    <h3>GTA V</h3>
+                    <p class="category">Экшен / Открытый мир</p>
+                    <div class="price-row">
+                        <span class="price-free">БЕСПЛАТНО</span>
+                        <a href="#" download class="download-btn"><i class="fa-solid fa-download"></i> Скачать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Игра 4 -->
+            <div class="game-card">
+                <div class="game-info">
+                    <h3>Minecraft</h3>
+                    <p class="category">Песочница / Выживание</p>
+                    <div class="price-row">
+                        <span class="price-free">БЕСПЛАТНО</span>
+                        <a href="#" download class="download-btn"><i class="fa-solid fa-download"></i> Скачать</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Скрипт живого поиска -->
+    <script>
+        function searchGames() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('game-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

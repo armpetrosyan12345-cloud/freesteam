@@ -1,0 +1,147 @@
+/* Общие настройки для темной темы */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1b2838; /* Цвет фона как в Steam */
+    color: #c7d5e0;
+}
+
+/* Стилизация шапки */
+header {
+    background-color: #171a21;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #66c0f4; /* Голубой цвет Steam */
+}
+
+/* Строка поиска */
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    background-color: #2a475e;
+    border: none;
+    padding: 10px 40px 10px 15px;
+    color: white;
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    width: 320px;
+    background-color: #3b6280;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    color: #66c0f4;
+}
+
+/* Контентная зона */
+main {
+    padding: 40px;
+}
+
+.section-title {
+    border-bottom: 2px solid #2a475e;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Сетка карточек */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Карточка игры */
+.game-card {
+    background-color: #16202d;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #2a475e;
+    height: 180px; /* Высота под заглушку, пока нет картинок */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: #66c0f4;
+}
+
+.game-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #5c7e10;
+    color: #a3d200;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.game-info {
+    padding: 15px;
+    background: linear-gradient(to top, #16202d 80%, transparent);
+}
+
+.game-info h3 {
+    margin: 0 0 5px 0;
+    color: white;
+    font-size: 18px;
+}
+
+.category {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #66c0f4;
+}
+
+/* Строка цены и кнопки */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-free {
+    color: #a3d200;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.download-btn {
+    background: linear-gradient( to right, #75b022 0%, #588a1b 100%);
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    filter: brightness(1.2);
+}
